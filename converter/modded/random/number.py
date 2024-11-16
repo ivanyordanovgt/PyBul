@@ -15,7 +15,7 @@ def RANDOM_NUMBER(line):
         a = line_items[line_items.index('от')+1]
         b = line_items[line_items.index('до')+1]
 
-    line_items[expression_start] = f"str(random.randint({a}, {b}))"
+    line_items[expression_start] = f"random.randint({a}, {b})"
     del line_items[expression_start+1:expression_end + 1]
 
     return " ".join(line_items)
