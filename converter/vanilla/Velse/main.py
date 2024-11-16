@@ -1,2 +1,2 @@
 def ELSE(line):
-    return line.replace('друго:', 'else: ')
+    return line.replace('друго:', 'else:')
