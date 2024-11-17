@@ -4,5 +4,5 @@ def PRINT(line):
     if len(line_items[keyword_index]) != 4:
         raise TypeError("TF?")
 
-    line_converted = line[0:keyword_index] + f"print( {' '.join(line_items[keyword_index+1::])} )"
+    line_converted = line[0:keyword_index] + f"print( {' '.join(line_items[keyword_index+1::]).strip()} )"
     return line_converted

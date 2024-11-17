@@ -23,6 +23,9 @@ keyboard.on_press(<FUNC_NAME>)"""
     def test_time_sleep(self):
         result = TIME_SLEEP("изчакай 1 секунда")
         self.assertEqual(result, "time.sleep(1)")
+    def test_tkinter_message(self):
+        result = TKINTER_MESSAGE('покажи грешка със съобщение "ИМАШ ВИРУС!" с бутони "ок","добре","окей"')
+        print('---> test', result)
 
 if __name__ == "__main__":
     unittest.main()

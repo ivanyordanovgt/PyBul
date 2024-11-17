@@ -3,8 +3,7 @@ from utils import *
 from converter.vanilla.main import *
 from converter.modded.main import *
 
-from converter.libraries.time.main import TIME_SLEEP
-from converter.libraries.keyboard.main import ON_PRESS
+from converter.libraries.main import *
 
 from converter.modded.matrix.utils import GameList
 
@@ -38,7 +37,8 @@ BULGARIAN_KEYWORDS = {
     'завинаги:': lambda line: line.replace('завинаги:', 'while True:'),
     'изчакай': func(TIME_SLEEP),
     'изчисти': lambda line: line.replace('изчисти', "os.system('cls')"),
-    'клавиатура:': lambda line: line
+    'клавиатура:': lambda line: line,
+    'съобщение': func(TKINTER_MESSAGE)
 }
 
 FUNCTION_WHITHIN_ITEMS = ['клавиатура:']
@@ -95,5 +95,5 @@ def custom_translate(file_path, snapshot=False, exec_script=True):
     
     return translated_code
 
-# custom_translate('./')
-custom_translate('./tests/code/simple', True)
+custom_translate('./', True, True)
+# custom_translate('./tests/code/simple', True)
