@@ -5,12 +5,12 @@ import re
 
 class TestLibraries(unittest.TestCase):
     def test_show(self):
-        whithin_function_block = Whithin_function_block("test", 2, 'кажи "Здравей"', "клавиатура:")
+        whithin_function_block = Whithin_function_block("test", 2, '    кажи "Здравей"', "клавиатура:")
         
         result = ON_PRESS(whithin_function_block)
         expect = """
 def <FUNC_NAME>(data):
-кажи "Здравей"
+    кажи "Здравей"
 keyboard.on_press(<FUNC_NAME>)"""
         
         result_pattern = re.sub(r'def \S+\(data\):', 'def <FUNC_NAME>(data):', result.strip())
